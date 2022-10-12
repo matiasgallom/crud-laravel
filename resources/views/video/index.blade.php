@@ -36,7 +36,11 @@
             <td>{{ $video->id}}</td>
             <td>{{ $video->dificultad}}</td>
             <td>{{ $video->descripcion}}</td>
-            <td>{{ $video->urlvideo}}</td>
+            <td>
+                <div class="ratio ratio-16x9">
+                    <iframe width="426" height="240" src="{{$video->urlvideo}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </td>
             <td>
                 <form action="{{route('videos.destroy', $video->id)}}" method="POST">
                 <a href="/videos/{{$video->id}}/edit" class="btn btn-success">Reproducir</a>
